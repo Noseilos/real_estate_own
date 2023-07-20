@@ -269,7 +269,7 @@ h1,h2,h3,h4,h5,h6{
 .handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before { animation-delay: 1.2s;}
 .handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before { animation-delay: 1.4s;}
 .handle-preloader .loader-section {
-  background-color: #ffffff;
+  background-color: #ff6f00;
   height: 100%;
   position: fixed;
   top: 0;
@@ -282,7 +282,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading{
-  color: #ffffff;
+  color: #ff6f00;
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before{
@@ -290,7 +290,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .handle-preloader .animation-preloader .spinner{
-  border: 3px solid #ffffff;
+  border: 3px solid #ff6f00;
   border-top-color: rgba(255, 255, 255, 0.5); 
 }
 

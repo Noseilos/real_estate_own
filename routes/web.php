@@ -62,7 +62,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
     Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
     Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
-
     Route::get('/user/schedule/request', [UserController::class, 'UserScheduleRequest'])->name('user.schedule.request');
     Route::get('/live/chat', [UserController::class, 'LiveChat'])->name('live.chat');
 
@@ -360,7 +359,8 @@ Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name(
 
 
 
-
+// PROPERTY CATEGORIES
+Route::get('/category/property', [IndexController::class, 'PropertyCategory'])->name('category.property');
 
 Route::get('/property/details/{id}/{slug}', [IndexController::class, 'PropertyDetails']);
 
