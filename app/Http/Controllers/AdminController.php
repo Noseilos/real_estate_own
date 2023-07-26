@@ -2,18 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PropertyType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Carbon\Carbon;
+use App\Models\Property;
+use DB;
 
 class AdminController extends Controller
 {
     public function AdminDashboard(){
+
+        $getData = PropertyType::select('type_name')->withCount('property as Property')->get();
+        $propertyTypeData = $getData->mapWithKeys(function($item, $key){
+            return [$item->type_name => $item->Property];
+        });
+
+        $getSched = Property::select('property_name as Property')->withCount('schedule as Schedule')->get();
+        $propertySchedData = $getSched->mapWithKeys(function($item, $key){
+            return [$item->Property => $item->Schedule];
+        });
         
-        return view('admin.index');
+
+        return view('admin.index', compact('propertyTypeData', 'propertySchedData'));
     } // END AdminDashboard
 
 
