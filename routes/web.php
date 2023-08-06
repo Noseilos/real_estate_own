@@ -131,6 +131,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 
         Route::get('/all/type', 'AllPropertyType')->name('all.type')->middleware('permission:all.type');
         Route::get('/add/type', 'AddPropertyType')->name('add.type')->middleware('permission:add.type');
+        Route::get('/import/type', 'ImportPropertyType')->name('import.type')->middleware('permission:add.type');
+        Route::post('/type/import', 'TypeImport')->name('type.import');
         Route::post('/store/type', 'StorePropertyType')->name('store.type');
         Route::get('/edit/type/{id}', 'EditPropertyType')->name('edit.type')->middleware('permission:edit.type');
         Route::post('/update/type', 'UpdatePropertyType')->name('update.type');
@@ -184,6 +186,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 
         Route::get('/all/agent', 'AllAgent')->name('all.agent')->middleware('permission:agent.all');
         Route::get('/add/agent', 'AddAgent')->name('add.agent')->middleware('permission:agent.add');
+        Route::get('/import/agent', 'ImportAgent')->name('import.agent')->middleware('permission:agent.add');
+        Route::post('/agent/import', 'AgentImport')->name('agent.import');
         Route::post('/store/agent', 'StoreAgent')->name('store.agent');
         Route::get('/edit/agent/{id}', 'EditAgent')->name('edit.agent')->middleware('permission:agent.edit');
         Route::post('/update/agent', 'UpdateAgent')->name('update.agent');
@@ -216,6 +220,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
     Route::controller(BlogController::class)->group(function () {
         Route::get('/all/blog/category', 'AllBlogCategory')->name('all.blog.category')->middleware('permission:category.all');
         Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
+        Route::get('/import/category', 'ImportCategory')->name('import.category')->middleware('permission:category.edit');
+        Route::post('/import/import', 'CategoryImport')->name('category.import');
         Route::get('/blog/category/{id}', 'EditBlogCategory')->middleware('permission:category.edit');
         Route::post('/update/blog/category', 'UpdateBlogCategory')->name('update.blog.category');
         Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('delete.blog.category')->middleware('permission:category.delete');

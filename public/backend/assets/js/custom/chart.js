@@ -25,7 +25,7 @@ var SampleChartClass;
                 data: {
                   labels: labels,
                   datasets: [{
-                    label: '# of Votes',
+                    label: '# of Properties',
                     data: data,
                     borderWidth: 1
                   }]
@@ -53,7 +53,7 @@ var SampleChartClass;
               data: {
                 labels: labels,
                 datasets: [{
-                  label: '# of Votes',
+                  label: '# of Schedules',
                   data: data,
                   borderWidth: 1
                 }]
