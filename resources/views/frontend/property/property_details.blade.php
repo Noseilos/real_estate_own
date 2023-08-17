@@ -55,6 +55,9 @@
                         </div>
                     </div>
                     <div class="right-column pull-right clearfix">
+                        
+                        <input type="hidden" id="dproduct_id" value="{{ $property->id }}">
+                        
                         <div class="price-inner clearfix">
                             <ul class="category clearfix pull-left">
                                 <li><a href="property-details.html">{{ $property->type->type_name }}</a></li>
@@ -65,10 +68,7 @@
                             </div>
                         </div>
                         <ul class="other-option pull-right clearfix">
-                            <li><a href="property-details.html"><i class="icon-37"></i></a></li>
-                            <li><a href="property-details.html"><i class="icon-38"></i></a></li>
-                            <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                            <li><a href="property-details.html"><i class="icon-13"></i></a></li>
+                            <li><button type="submit" onclick="addToCartDetails()"><i class="icon-38"></i>Add to cart</button></li>
                         </ul>
                     </div>
                 </div>
