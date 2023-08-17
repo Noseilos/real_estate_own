@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\ChatController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\Frontend\CompareController;
+use App\Http\Controllers\Frontend\CartController;
 
 
 
@@ -424,6 +425,10 @@ Route::post('/send-message', [ChatController::class, 'SendMsg'])->name('send.msg
 Route::get('/user-all', [ChatController::class, 'GetAllUsers']);
 Route::get('/user-message/{id}', [ChatController::class, 'UserMessageById']);
 Route::get('/agent/live/chat', [ChatController::class, 'AgentLiveChat'])->name('agent.live.chat');
+
+
+Route::get('/transaction', [CartController::class, 'TransactDetails'])->name('transact');
+Route::get('/transaction/complete', [CartController::class, 'TransactComplete'])->name('transact.comp');
 
 
 
